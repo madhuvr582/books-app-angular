@@ -1,0 +1,22 @@
+<div class="book-edit-dialog" [ngClass]="{'show': showDialog}">
+    <div class="dialog-content">
+    <h2>Edit Book</h2>
+    <form>
+      <label for="title" *ngIf="book.title === ''">Title</label>
+      <input id="title" *ngIf="book.title === ''" name="title" [(ngModel)]="title" required>
+  
+      <label for="imageUrl">Image URL</label>
+      <input id="imageUrl" name="imageUrl" [(ngModel)]="book.imageUrl">
+  
+      <label for="purchaseUrl">Purchase URL</label>
+      <input id="purchaseUrl" name="purchaseUrl" [(ngModel)]="book.purchaseLink">
+  
+      <label for="publishDate">Publish Date</label>
+      <input id="publishDate" name="publishDate" [(ngModel)]="book.PublishDate">
+      <!-- Add more fields as needed -->
+  
+      <button (click)="closeDialog(book)">Save</button>
+      <button (click)="closeDialog()">Cancel</button>
+    </form>
+</div>
+  </div>

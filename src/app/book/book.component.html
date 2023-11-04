@@ -1,0 +1,28 @@
+<div class="author-details" *ngIf="author">
+    <h2 class="author-name">{{ author.author }}</h2>
+    <p class="author-info">Birthday: {{ author.birthday }}</p>
+    <p class="author-info">Place of Birth: {{ author.birthPlace }}</p>
+    <div class="buttons">
+      <button class="add-button" (click)="addBook()">Add</button>
+      <button class="sort-button" (click)="toggleSort()"> {{ isAlphabetSort ? 'Sort by Publish Date' : 'Sort by Alphabet' }}</button>
+    </div>
+  
+  
+    <div class="book-list">
+      <div class="book-item" *ngFor="let book of author.books; trackBy:identify">
+        <div class="book-details">
+          <img [src]="book.imageUrl" alt="{{ book.title }}" />
+          <div class="book-info">
+            <h3><a [href]="book.purchaseLink" target="_blank">{{ book.title }}</a></h3>
+            <p class="publish-date">Published: {{ book.PublishDate }}</p>
+            <button class="edit-button" (click)="editBook(book)">Edit</button>
+            <button class="delete-button" (click)="deleteBook(book.title)">Delete</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  </div>
+  <div>
+    <app-book-edit [book]="selectedBook" [showDialog]="showDialog" (closeDialogEvent)="closeDialog($event)"></app-book-edit>
+  </div>

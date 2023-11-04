@@ -1,0 +1,89 @@
+.author-details {
+    background-color: #fff;
+    border: 1px solid #e5e5e5;
+    border-radius: 5px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+    
+  .author-name {
+    font-size: 2.5rem;
+    margin: 0;
+  }
+  
+  .author-info {
+    color: #888;
+    font-size: 1.5rem;
+    margin: 0;
+  }
+
+.book-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Display books in two columns */
+    grid-gap: 20px;
+    background-color: #f4f4f4;
+    padding: 20px;
+  }
+  
+  .book-item {
+    background-color: #fff;
+    border: 1px solid #e5e5e5;
+    border-radius: 5px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .book-item img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .book-info {
+    margin-top: 20px;
+  }
+  
+  h3 {
+    font-size: 1.5rem;
+    margin: 0;
+  }
+  
+  .publish-date {
+    color: #888;
+    font-size: 0.9rem;
+    margin: 0;
+  }
+  
+  /* Media query for smaller screens */
+  @media screen and (max-width: 767px) {
+    .book-list {
+      grid-template-columns: 1fr; /* Switch to a single column on smaller screens */
+    }
+  }
+
+  .edit-button, .delete-button {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin-right: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  .add-button, .sort-button {
+    @extend .edit-button;
+  }
+  .buttons {
+    margin-left: auto;
+  }
+  
+  .edit-button:hover, .delete-button:hover {
+    background-color: #0056b3;
+  }
