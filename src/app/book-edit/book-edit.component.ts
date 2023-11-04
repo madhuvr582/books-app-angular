@@ -1,11 +1,4 @@
-import {
-  Component,
-  Input,
-  Output,
-  EventEmitter,
-  SimpleChanges,
-  OnChanges,
-} from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Book } from '../data.service';
 
 @Component({
@@ -15,14 +8,23 @@ import { Book } from '../data.service';
 })
 export class BookEditComponent {
   @Input() book = {} as Book;
+
+  /**
+   * Input property that indicates whether the dialog for editing the book details is displayed.
+   */
   @Input() showDialog: boolean | undefined;
+
+  /**
+   * Output event emitter for closing the book edit dialog and optionally passing the edited book back.
+   */
   @Output() closeDialogEvent = new EventEmitter<Book>();
+
   title: string = '';
 
-  ngOnInit() {
-    console.log('book', this.book, this.showDialog);
-  }
-
+  /**
+   * Closes the book edit dialog, optionally updating the book's title.
+   * @param book The book with updated details (if edited).
+   */
   closeDialog(book?: Book) {
     this.showDialog = false;
     if (this.title !== '' && book) {
